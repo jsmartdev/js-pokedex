@@ -7,6 +7,7 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -14,6 +15,24 @@ body {
   font-size: 20px;
 }
 
+#main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #pokemon-sprite {
-  width: 20rem;
+  width: 10rem;
+}
+
+#pokemon-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.poke-card {
+  margin: 1rem;
 }
