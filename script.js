@@ -2,7 +2,7 @@ let allPokemon = [];
 
 const getPokemon = () => {
   
-  fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
+  fetch(`https://pokeapi.co/api/v2/pokemon?limit=200`)
     .then(response => response.json())
     .then(data => {
       const allPokemon = data.results;
