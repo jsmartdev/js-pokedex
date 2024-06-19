@@ -11,7 +11,7 @@ const getPokemon = () => {
   const pokemonValue = pokemon.value;
 
   if(!pokemonValue) {
-    alert('Please enter a city!');
+    alert('Please enter a pokemon!');
     return;
   }
   
@@ -21,10 +21,11 @@ const getPokemon = () => {
     .then(response => response.json())
     .then(data => {
       displayPokemon(data);
+      console.log(data);
     })
     .catch(err => {
-      console.error('Error fetching current weather data:', err)
-      alert('Error fetching current weather data! Please try again!')
+      console.error('Error fetching pokemon:', err)
+      alert('Error fetching pokemon! Please try again!')
     });
 
 }
@@ -42,9 +43,16 @@ const displayPokemon = (data) => {
     paragraph.textContent = data.message;
     pokemonInfo.appendChild(paragraph);
   } else {
+    const id = data.id;
+    const spriteUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
     const pokemonName = data.name;
+    const pokemonWeight = data.weight;
     const nameParagraph =  document.createElement('p');
+    const weightParagraph = document.createElement('p');
     nameParagraph.textContent = `${pokemonName}`;
+    weightParagraph.textContent = `Weight: ${pokemonWeight}`
     pokemonInfo.appendChild(nameParagraph);
+    pokemonInfo.appendChild(weightParagraph);
+    pokemonSprite.src = spriteUrl;
   }
 }

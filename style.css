@@ -13,3 +13,7 @@ body {
   margin: 0;
   font-size: 20px;
 }
+
+#pokemon-sprite {
+  width: 20rem;
+}
