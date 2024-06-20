@@ -23,7 +23,7 @@ body {
 }
 
 #pokemon-sprite {
-  width: 10rem;
+  width: 5rem;
 }
 
 #pokemon-info {
@@ -34,5 +34,15 @@ body {
 }
 
 .poke-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 1rem;
+  background-color: rgb(139, 204, 206);
+  border-radius: 25px;
+}
+
+.poke-image {
+  width: 15rem;
 }
