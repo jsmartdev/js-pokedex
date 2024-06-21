@@ -41,8 +41,9 @@ body {
   margin: 1rem;
   background-color: rgb(139, 204, 206);
   border-radius: 25px;
+  padding: 2rem;
 }
 
 .poke-image {
-  width: 15rem;
+  width: 12rem;
 }
