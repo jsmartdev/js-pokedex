@@ -1,4 +1,3 @@
-let allPokemon = [];
 
 const getPokemon = async () => {
   
@@ -35,7 +34,7 @@ getPokemon().then(data => {
 
 })
 
-getPokemon(allPokemon);
+getPokemon();
 
 
 /*const displayPokemon = (data) => {
