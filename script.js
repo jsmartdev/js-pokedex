@@ -12,8 +12,6 @@ const getPokemon = async () => {
   }
 }
 
-
-
 getPokemon().then(data => {
   
   const allPokemon = data.results;
@@ -23,7 +21,7 @@ getPokemon().then(data => {
     const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
     const card = document.createElement('div');
     card.classList.add('poke-card');
-    const name = document.createElement('p');
+    const name = document.createElement('h2');
     name.textContent = `${element.name.charAt(0).toUpperCase() + element.name.slice(1)}`;
     const pokemonImage = document.createElement('img');
     pokemonImage.classList.add('poke-image');
@@ -46,10 +44,15 @@ getPokemon().then(data => {
     
     card.onclick = () => {
       getStats().then(data => {
-        console.log(data);
+        const modal = document.createElement('div');
+        const name = document.createElement('h2');
+        name.textContent = `${data.name.charAt(0).toUpperCase() + data.name.slice(1)}`;
+        const allTypes = data.types;
+        allTypes.forEach(type => {
+          const pokeType = type.type.name;
+          console.log(pokeType);
+        })
       })
     }
-    
-    
   })
 })
